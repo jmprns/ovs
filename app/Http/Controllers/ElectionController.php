@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Election\Store;
 use App\Http\Requests\Election\Update;
 use App\Http\Resources\ElectionResource;
+use App\Http\Resources\VoterResource;
 use App\Models\Election;
+use App\Models\Voter;
 use Illuminate\Http\Request;
 
 class ElectionController extends Controller
@@ -71,5 +73,11 @@ class ElectionController extends Controller
         $election = Election::findOrFail($id);
         $election->delete();
         return new ElectionResource($election);
+    }
+
+    public function voters($id)
+    {
+        $voters = Voter::where('election_id', $id)->get();
+        return new VoterResource($voters);
     }
 }

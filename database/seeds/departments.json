@@ -1,0 +1,66 @@
+[
+    {
+        "name": "Junior High School (JHS)",
+        "years": [
+            {
+                "name": "Grade 7",
+                "blocks": [
+                    {"name": "Block 1"},
+                    {"name": "Block 2"},
+                    {"name": "Block 3"},
+                    {"name": "Block 4"},
+                    {"name": "Block 5"}
+                ]
+            },
+            {
+                "name": "Grade 8",
+                "blocks": [
+                    {"name": "Block 1"},
+                    {"name": "Block 2"}
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Accountancy, Business and Management (ABM)",
+        "years": [
+            {
+                "name": "Grade 11",
+                "blocks": [
+                    {"name": "Block 1"},
+                    {"name": "Block 2"},
+                    {"name": "Block 3"},
+                    {"name": "Block 4"},
+                    {"name": "Block 5"}
+                ]
+            },
+            {
+                "name": "Grade 12",
+                "blocks": [
+                    {"name": "Block 1"},
+                    {"name": "Block 2"}
+                ]
+            }
+        ]
+    },
+    {
+        "name": "College of Computer Science (BSCS)",
+        "years": [
+            {
+                "name": "First Year",
+                "blocks": [
+                    {"name": "Block 1"},
+                    {"name": "Block 2"}
+                ]
+            },
+            {
+                "name": "Second Year",
+                "blocks": [
+                    {"name": "Block 1"},
+                    {"name": "Block 2"},
+                    {"name": "Block 3"}
+                ]
+            }
+        ]
+    }
+]

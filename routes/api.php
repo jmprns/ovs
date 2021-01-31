@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ElectionController;
+use App\Http\Controllers\VoterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,13 +22,23 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 
-// Route::group(['prefix' => 'election'], function(){
-//     Route::get('/', [ElectionController::class, 'index'])->name('election.index');
-//     Route::post('/', [ElectionController::class, 'store'])->name('election.store');
-//     Route::get('/{id}', [ElectionController::class, 'show'])->name('election.show');
-//     Route::put('/{id}', [ElectionController::class, 'update'])->name('election.update');
-//     Route::delete('/{id}', [ElectionController::class, 'destroy'])->name('election.destroy');
+Route::group(['prefix' => 'election'], function(){
+
+    Route::get('/', [ElectionController::class, 'index'])->name('election.index');
+    Route::post('/', [ElectionController::class, 'store'])->name('election.store');
+    Route::get('/{id}', [ElectionController::class, 'show'])->name('election.show');
+    Route::put('/{id}', [ElectionController::class, 'update'])->name('election.update');
+    Route::delete('/{id}', [ElectionController::class, 'destroy'])->name('election.destroy');
+
+
+    Route::group(['prefix' => '{id}'], function(){
+        Route::get('/voters', [ElectionController::class, 'voters'])->name('election.voters');
+    });
+
+
+
+});
+
+// Route::group(['prefix' => 'voters'], function(){
+//     Route::get('/', [VoterController::class, 'index'])->name('voters.index');
 // });
-
-
-Route::apiResource('election', App\Http\Controllers\ElectionController::class);
